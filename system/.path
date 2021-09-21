@@ -3,3 +3,5 @@ export PATH="/Users/bobby/Library/Python/3.7/bin/:$PATH";
 
 # Add .NET Core SDK tools
 export PATH="$PATH:/Users/bobby/.dotnet/tools"
+
+# export PATH="$PATH:/usr/local/lib/node_modules/aws-cdk/bin/cdk"

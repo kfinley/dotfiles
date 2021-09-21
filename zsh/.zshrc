@@ -102,20 +102,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-
-# mysql
-eval "$(pyenv init -)"
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-
-# Personal Scripts
-export SCRIPTS="~/projects/personal/Scripts"
-export PATH="$PATH:$SCRIPTS"
-export PATH="$PATH:/usr/local/lib/node_modules/aws-cdk/bin/cdk"
+# # tabtab source for packages
+# # uninstall by removing these lines
+# [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+# export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 echo "Installing dotfiles..."
 
