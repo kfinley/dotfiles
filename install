@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+echo "Installing packages..."
+brew install --cask iterm2
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "Cloning zsh plugins"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+echo "Installing dotfiles..."
+
+ln -sv $HOME/.dotfiles/zsh/.zshrc ~/.zshrc

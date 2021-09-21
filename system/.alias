@@ -1,0 +1,12 @@
+alias l="ls -la"        # List in long format, include dotfiles
+alias lsd="ls -ld */"   # List in long format, only directories
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# Recursively remove .DS_Store files
+alias cleands="find . -type f -name '*.DS_Store' -ls -delete"
+
+# todo: check if python is installed
+alias guid="python -c 'import uuid; print(uuid.uuid4())'"
