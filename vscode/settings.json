@@ -1,5 +1,4 @@
 {
-    "window.zoomLevel": 1,
     "testExplorer.addToEditorContextMenu": true,
     "dotnet-test-explorer.testProjectPath": "src/Tests/*/",
     "editor.formatOnSave": true,
