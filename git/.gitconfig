@@ -1,0 +1,24 @@
+[user]
+	name = Kyle Finley
+	email = kyle@kylefinley.net
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = "code --wait $MERGED"
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff  $LOCAL $REMOTE"
+[core]
+	editor = code --wait
+[alias]
+	cm = !git add -A && git commit -m
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
