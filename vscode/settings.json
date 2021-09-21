@@ -1,5 +1,4 @@
 {
-    "window.zoomLevel": 1,
     "testExplorer.addToEditorContextMenu": true,
     "dotnet-test-explorer.testProjectPath": "src/Tests/*/",
     "editor.formatOnSave": true,
@@ -48,5 +47,6 @@
     "react-native-storybooks.port": 6007,
     "remote.SSH.configFile": "~/.ssh/config",
     "security.workspace.trust.untrustedFiles": "open",
-    "terminal.integrated.defaultProfile.osx": "zsh"
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "files.insertFinalNewline": true
 }
