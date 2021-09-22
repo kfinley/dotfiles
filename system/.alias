@@ -10,3 +10,5 @@ alias cleands="find . -type f -name '*.DS_Store' -ls -delete"
 
 # todo: check if python is installed
 alias guid="python -c 'import uuid; print(uuid.uuid4())'"
+
+alias c="clear"

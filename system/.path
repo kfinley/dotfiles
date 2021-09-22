@@ -8,3 +8,6 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# MacOS scripts
+export PATH="$PATH:$HOME/.dotnet/macos/"
