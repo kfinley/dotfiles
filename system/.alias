@@ -12,3 +12,6 @@ alias cleands="find . -type f -name '*.DS_Store' -ls -delete"
 alias guid="python -c 'import uuid; print(uuid.uuid4())'"
 
 alias c="clear"
+
+alias qa="osascript $MACSCRIPTS/toggle-function-keys.scpt 'Quick Actions'"
+alias fk="osascript $MACSCRIPTS/toggle-function-keys.scpt 'F1, F2, etc. Keys'"
