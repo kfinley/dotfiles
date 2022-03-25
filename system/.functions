@@ -1,3 +1,7 @@
+function ur() {
+    git commit -m '(chore): updated refs'
+}
+
 function gs() {
     git status
 }
