@@ -13,5 +13,6 @@ alias guid="python -c 'import uuid; print(uuid.uuid4())'"
 
 alias c="clear"
 
-alias qa="osascript $MACSCRIPTS/toggle-function-keys.scpt 'Quick Actions'"
-alias fk="osascript $MACSCRIPTS/toggle-function-keys.scpt 'F1, F2, etc. Keys'"
+# Uncomment to setup shortcuts for toggling touchbar f keys
+# alias qa="osascript $MACSCRIPTS/toggle-function-keys.scpt 'Quick Actions'"
+# alias fk="osascript $MACSCRIPTS/toggle-function-keys.scpt 'F1, F2, etc. Keys'"

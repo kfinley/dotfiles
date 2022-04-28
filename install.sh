@@ -3,7 +3,7 @@ which -s brew
 if [[ $? != 0 ]] ; then
     echo "Installing Home brew..."
     # Install Homebrew
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
     brew update
 fi
@@ -13,6 +13,34 @@ echo "Installing packages..."
 if [ ! -d /Applications/iTerm.app ]; then
     # proceed with installing iTerm
     brew install --cask iterm2
+fi
+
+if [ ! -d /Applications/Flour.app ]; then
+    echo "Installing Flour..."
+    brew install --cask fluor
+fi
+
+if [ ! -d /Applications/Hermes.app ]; then
+    echo "Installing hermes..."
+    brew install --cask hermes
+fi
+
+if [ ! -d /Applications/Visual\ Studio\ Code.app ]; then
+    echo "Installing VSCode..."
+    brew install --cask visual-studio-code
+fi
+
+if [ ! -d /Applications/Docker.app ]; then
+    echo "Installing Docker..."
+    brew install docker
+fi
+
+which -s dotnet
+if [[ $? != 0 ]] ; then
+    echo "Installing dotnet..."
+    brew install --cask dotnet
+else
+    brew update
 fi
 
 if [ ! -d ~/.oh-my-zsh ]; then
@@ -53,5 +81,7 @@ fi
 ln -sv $HOME/.dotfiles/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 
 source ~/.dotfiles/system/.path
+
+source ~/.dotfiles/.macos
 
 source ~/.dotfiles/vscode/install-extensions.sh
