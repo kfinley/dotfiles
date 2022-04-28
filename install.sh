@@ -37,8 +37,8 @@ fi
 
 which -s dotnet
 if [[ $? != 0 ]] ; then
-    echo "Installing dotnet..."
-    brew install --cask dotnet
+    echo "Installing dotnet SDK..."
+    brew install --cask dotnet-sdk
 else
     brew update
 fi
