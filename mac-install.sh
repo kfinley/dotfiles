@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-export DOTFILES="~/dotfiles"
 
 which -s brew
 if [[ $? != 0 ]] ; then

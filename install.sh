@@ -1,6 +1,4 @@
 #!/usr/bin/env sh
-#!/bin/sh
-export DOTFILES="/workspaces/.codespaces/.persistedshare/dotfiles"
 
 if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
     echo "Cloning zsh plugins"
