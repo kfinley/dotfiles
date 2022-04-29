@@ -14,6 +14,10 @@ function gcommit() {
     git commit -m "$@"
 }
 
+function glog() {
+    git log
+}
+
 # Create a new directory and enter it
 function mk() {
   mkdir -p "$@" && cd "$@"
