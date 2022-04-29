@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Sources: List of various public MacOS dotfiles setups
+# https://github.com/keyamin/dotfiles/blob/main/mac/setup.sh
+
+
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
@@ -66,9 +70,13 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
+# Disable press and hold to show character palette
+# https://www.macworld.com/article/351347/how-to-activate-key-repetition-through-the-macos-terminal.html
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 ###############################################################################
 # Screen                                                                      #
