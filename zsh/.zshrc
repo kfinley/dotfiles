@@ -1,6 +1,6 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-if [ -d "/workspaces/.codespaces/.persistedshare/dotfiles" ]
+if [ -d "/workspaces/.codespaces/.persistedshare/dotfiles" ] ; then
   export DOTFILES="/workspaces/.codespaces/.persistedshare/dotfiles"
 else
   export DOTFILES="~/dotfiles"
