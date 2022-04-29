@@ -25,12 +25,22 @@ function backup-vs(){
 
 function a() {
     AAPL=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=aapl | grep -Eoi "<span stream=\"last_36276\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"74-" | colrm 7)
-    echo "Apple Current Price: \$$AAPL"
+    echo "AAPL \$$AAPL"
 }
 
 function ms() {
     MSFT=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=msft | grep -Eoi "<span stream=\"last_205778\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"75-" | colrm 7)
-    echo "Microsoft Current Price: \$$MSFT"
+    echo "MSFT \$$MSFT"
+}
+
+function ibm() {
+    IBM=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=ibm | grep -Eoi "<span stream=\"last_151846\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"75-" | colrm 7)
+    echo "IBM  \$$IBM"
+}
+
+function twtr() {
+    TWTR=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=twtr | grep -Eoi "<span stream=\"last_68572657\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"77-" | colrm 6)
+    echo "TWTR  \$$TWTR"
 }
 
 # remove specified host from /etc/hosts

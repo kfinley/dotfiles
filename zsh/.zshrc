@@ -63,10 +63,13 @@ source $ZSH/oh-my-zsh.sh
 # DISABLE_UPDATE_PROMPT=true
 
 echo "Installing dotfiles..."
-
 for DOTFILE in `find $DOTFILES/system`
 do
   [ -f $DOTFILE ] && source $DOTFILE
 done
 
+echo "Stocks..."
 a
+ibm
+ms
+twtr
