@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
 
-source system/.alias
-source system/.functions
+cat "
+
+source ~/.dotfiles/system/.alias
+source ~/.dotfiles/system/.functions
+" >> $HOME/.bashrc
