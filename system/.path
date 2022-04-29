@@ -1,5 +1,3 @@
-# Add Python 3.7 bin to path
-export PATH="$HOME/Library/Python/3.7/bin/:$PATH";
 
 # Add .NET Core SDK tools
 export PATH="$PATH:$HOME/.dotnet/tools"
@@ -7,6 +5,9 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 # export PATH="$PATH:/usr/local/lib/node_modules/aws-cdk/bin/cdk"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Add Python 3.7 bin to path
+    export PATH="$HOME/Library/Python/3.7/bin/:$PATH";
+
     # Add Visual Studio Code (code)
     export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
