@@ -6,6 +6,10 @@ function gs() {
     git status
 }
 
+function gadd() {
+    git add "$@"
+}
+
 # Create a new directory and enter it
 function mk() {
   mkdir -p "$@" && cd "$@"
