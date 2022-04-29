@@ -18,8 +18,8 @@ if [ -f ~/.zshrc ]; then
 fi 
 
 # shell settings
-ln -sv $HOME/.dotfiles/zsh/.zshrc ~/.zshrc
+cat $HOME/.dotfiles/zsh/.zshrc >> $HOME/.bashrc
 
-source $HOME/.dotfiles/system/.path
+# source $HOME/.dotfiles/system/.path
 
 # source ~/.dotfiles/vscode/install-extensions.sh
