@@ -57,8 +57,5 @@
   "editor.formatOnPaste": true,
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
-  },
-  "dotfiles.installCommand": "~/.dotfiles/dev-container-install.sh",
-  "dotfiles.repository": "https://github.com/kfinley/dotfiles.git",
-  "dotfiles.targetPath": "~/.dotfiles"
+  }
 }
