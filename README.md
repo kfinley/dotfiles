@@ -2,7 +2,7 @@
 
 Personal dotfiles setup.
 
-# Reference
+## References
 
 https://github.com/keyamin/dotfiles
 
