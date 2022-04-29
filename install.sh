@@ -12,3 +12,6 @@ if [ -f ~/.zshrc ]; then
 fi 
 
 ln -sfn /workspaces/.codespaces/.persistedshare/dotfiles/zsh/.zshrc ~/.zshrc
+
+# git configurations
+ln -sfn /workspaces/.codespaces/.persistedshare/dotfiles/git/.gitconfig ~/.gitconfig
