@@ -1,7 +1,15 @@
 #!/usr/bin/env sh
 
-cat "
+if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
+    echo "Cloning zsh plugins"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
 
-source ~/.dotfiles/system/.alias
-source ~/.dotfiles/system/.functions
-" >> $HOME/.bashrc
+echo "Linking dotfiles..."
+
+if [ -f ~/.zshrc ]; then
+    mv ~/.zshrc ~/.zshrc_backup
+fi 
+
+# shell settings
+ln -sv $HOME/.dotfiles/zsh/.zshrc ~/.zshrc
