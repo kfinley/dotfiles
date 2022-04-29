@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+#!/bin/sh
 
 if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
     echo "Cloning zsh plugins"
@@ -11,4 +12,4 @@ if [ -f ~/.zshrc ]; then
     mv ~/.zshrc ~/.zshrc_backup
 fi 
 
-ln -sfn $HOME/dotfiles/zsh/.zshrc ~/.zshrc
+ln -sfn /workspaces/.codespaces/.persistedshare/dotfiles/zsh/.zshrc ~/.zshrc
