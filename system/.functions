@@ -17,7 +17,7 @@ function backup-vs(){
 
 function a() {
     AAPL=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=aapl | grep -Eoi "<span stream=\"last_36276\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"74-" | colrm 7)
-    ECHO "Apple Current Price: \$$AAPL"
+    echo "Apple Current Price: \$$AAPL"
 }
 
 # remove specified host from /etc/hosts
