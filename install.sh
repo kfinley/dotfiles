@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 if [[ "$OSTYPE" == "darwin"* ]]; then   
     export DOTFILES="$HOME/dotfiles"
