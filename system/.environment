@@ -1,2 +1,5 @@
-export MACSCRIPTS="$HOME/dotfiles/macos"
+if [["$OSTYPE" == "darwin" * ]]; then
+    export MACSCRIPTS="$HOME/dotfiles/macos"
+fi
+
 export DOTNET_CLI_TELEMETRY_OPTOUT=1

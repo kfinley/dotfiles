@@ -20,7 +20,7 @@ function mk() {
 }
 
 function backup-vs(){
-  code --list-extensions > ~/dotfiles/vscode/extensions
+  code --list-extensions > $DOTFILES/vscode/extensions
 }
 
 function a() {

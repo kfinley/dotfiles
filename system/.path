@@ -6,8 +6,12 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 
 # export PATH="$PATH:/usr/local/lib/node_modules/aws-cdk/bin/cdk"
 
-# Add Visual Studio Code (code)
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Add Visual Studio Code (code)
+    export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# MacOS scripts
-export PATH="$PATH:$HOME/.dotnet/macos/"
+    # MacOS scripts
+    export PATH="$PATH:$HOME/.dotnet/macos/"
+fi
+
+
