@@ -68,3 +68,5 @@ for DOTFILE in `find $DOTFILES/system`
 do
   [ -f $DOTFILE ] && source $DOTFILE
 done
+
+a
