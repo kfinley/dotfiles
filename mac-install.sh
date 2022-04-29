@@ -60,25 +60,25 @@ if [ -f ~/.zshrc ]; then
 fi 
 
 # shell settings
-ln -sv $HOME/dotfiles/zsh/.zshrc ~/.zshrc
+ln -sfn $HOME/dotfiles/zsh/.zshrc ~/.zshrc
 
 if [ -f ~/.gitconfig ]; then
     mv ~/.gitconfig ~/.gitconfig_backup
 fi 
 
 # git configurations
-ln -sv $HOME/dotfiles/git/.gitconfig ~/.gitconfig
+ln -sfn $HOME/dotfiles/git/.gitconfig ~/.gitconfig
 
 # vscode settings
 if [ -f $HOME/Library/Application\ Support/Code/User/settings.json ]; then
     mv $HOME/Library/Application\ Support/Code/User/settings.json $HOME/Library/Application\ Support/Code/User/settings_backup.json
 fi 
-ln -sv $HOME/dotfiles/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+ln -sfn $HOME/dotfiles/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 
 if [ -f $HOME/Library/Application\ Support/Code/User/keybindings.json ]; then
     mv $HOME/Library/Application\ Support/Code/User/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings_backup.json
 fi 
-ln -sv $HOME/dotfiles/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
+ln -sfn $HOME/dotfiles/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 
 source ~/dotfiles/system/.path
 
