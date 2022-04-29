@@ -94,4 +94,4 @@ fi
 
 ln -sfn $DOTFILES/git/.gitconfig ~/.gitconfig
 
-source ~/dotfiles/system/.path
+source $DOTFILES/system/.path
