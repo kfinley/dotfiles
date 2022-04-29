@@ -20,6 +20,6 @@ fi
 # shell settings
 ln -sv $HOME/.dotfiles/zsh/.zshrc ~/.zshrc
 
-source ~/.dotfiles/system/.path
+source $HOME/.dotfiles/system/.path
 
 # source ~/.dotfiles/vscode/install-extensions.sh
