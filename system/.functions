@@ -28,6 +28,11 @@ function a() {
     echo "Apple Current Price: \$$AAPL"
 }
 
+function ms() {
+    MSFT=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=msft | grep -Eoi "<span stream=\"last_205778\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"75-" | colrm 7)
+    echo "Microsoft Current Price: \$$MSFT"
+}
+
 # remove specified host from /etc/hosts
 function removehost() {
     if [[ "$1" ]]
