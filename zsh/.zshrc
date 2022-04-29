@@ -114,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 
 echo "Installing dotfiles..."
 
-for DOTFILE in `find $HOME/dotfiles/system`
+for DOTFILE in `find $DOTFILES/system`
 do
   [ -f $DOTFILE ] && source $DOTFILE
 done
