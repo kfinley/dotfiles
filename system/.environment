@@ -1,2 +1,2 @@
-export MACSCRIPTS="$HOME/.dotfiles/macos"
+export MACSCRIPTS="$HOME/dotfiles/macos"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1

@@ -11,5 +11,4 @@ if [ -f ~/.zshrc ]; then
     mv ~/.zshrc ~/.zshrc_backup
 fi 
 
-# shell settings
-ln -sv $HOME/.dotfiles/zsh/.zshrc ~/.zshrc
+ln -sv $HOME/dotfiles/zsh/.zshrc ~/.zshrc
