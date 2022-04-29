@@ -108,6 +108,10 @@ source $ZSH/oh-my-zsh.sh
 # [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 # export PATH="/usr/local/opt/ruby/bin:$PATH"
 
+# From remote-containers .zshrc
+# DISABLE_AUTO_UPDATE=true
+# DISABLE_UPDATE_PROMPT=true
+
 echo "Installing dotfiles..."
 
 for DOTFILE in `find $HOME/.dotfiles/system`
