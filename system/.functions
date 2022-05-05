@@ -23,6 +23,14 @@ function backup-vs(){
   code --list-extensions > $DOTFILES/vscode/extensions
 }
 
+function s() {
+    echo "Stocks..."
+    a
+    ibm
+    ms
+    twtr
+}
+
 function a() {
     AAPL=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=aapl | grep -Eoi "<span stream=\"last_36276\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"74-" | colrm 7)
     echo "AAPL \$$AAPL"

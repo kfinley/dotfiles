@@ -68,8 +68,4 @@ do
   [ -f $DOTFILE ] && source $DOTFILE
 done
 
-echo "Stocks..."
 a
-ibm
-ms
-twtr
