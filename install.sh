@@ -12,6 +12,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         brew update
     fi
 
+    echo ""
     echo "Installing packages..."
 
     if [ ! -d /Applications/iTerm.app ]; then
@@ -19,28 +20,49 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         brew install --cask iterm2
     fi
 
-    if [ ! -d /Applications/Flour.app ]; then
+    if [ ! -d /Applications/Fluor.app ]; then
+        echo ""
         echo "Installing Flour..."
         brew install --cask fluor
     fi
 
     if [ ! -d /Applications/Hermes.app ]; then
+        echo ""
         echo "Installing hermes..."
         brew install --cask hermes
     fi
 
     if [ ! -d /Applications/Visual\ Studio\ Code.app ]; then
+        echo ""
         echo "Installing VSCode..."
         brew install --cask visual-studio-code
     fi
 
     if [ ! -d /Applications/Docker.app ]; then
+        echo ""
         echo "Installing Docker..."
-        brew install docker
+        # brew install docker # Installs Docker engine but not desktop
+        brew install --cask docker # install docker desktop
+    fi
+
+    if [ ! -d /Applications/Firefox.app ]; then
+        echo ""
+        echo "Installing Firefox..."
+        brew install --cask firefox
+    fi
+
+    which -s python
+    if [[ $? != 0 ]] ; then
+        echo ""
+        echo "Installing Python3..."
+        brew install python
+    else
+        echo "Python installed"
     fi
 
     which -s dotnet
     if [[ $? != 0 ]] ; then
+        echo ""
         echo "Installing dotnet SDK..."
         brew install --cask dotnet-sdk
     else
@@ -48,6 +70,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     fi
 
     if [ ! -d ~/.oh-my-zsh ]; then
+        echo ""
         echo "Installing oh-my-zsh..."
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
@@ -64,6 +87,16 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     ln -sfn $HOME/dotfiles/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 
     source ~/dotfiles/.macos
+
+    # install vscode extensions
+    # source ~/dotfiles/vscode/install-extensions.sh
+
+    echo ""
+    echo "Manual tasks..."
+    echo ""
+    echo "- Enable F Keys in Keyboard Settings"
+    echo "- Disable Show Desktop F11 shortcut in Settings > Keyboard > Shortcuts > Mission Control"
+
 else
     if [ -d "/workspaces/.codespaces/.persistedshare/dotfiles" ] ; then # in Codespaces
         export DOTFILES="/workspaces/.codespaces/.persistedshare/dotfiles"
@@ -78,6 +111,7 @@ if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
+echo ""
 echo "Linking dotfiles..."
 
 # shell settings
