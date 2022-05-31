@@ -14,6 +14,18 @@ function gcommit() {
     git commit -m "$@"
 }
 
+function gac() {
+    git add .
+    git commit -m "$@"
+    git push
+}
+
+function gacp() {
+    git add .
+    git commit -m "$@"
+    git push
+}
+
 # Create a new directory and enter it
 function mk() {
   mkdir -p "$@" && cd "$@"
