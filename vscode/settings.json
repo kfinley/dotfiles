@@ -57,5 +57,6 @@
   "editor.formatOnPaste": true,
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
-  }
+  },
+  "cSpell.userWords": ["Newtonsoft"]
 }
