@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ "$OSTYPE" == "darwin"* ]]; then   
+if [[ "$OSTYPE" == "darwin"* ]]; then   # MacOS section
     export DOTFILES="$HOME/dotfiles"
 
     which -s brew
@@ -51,6 +51,17 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         brew install --cask firefox
     fi
 
+    which -s node
+    if [[ $? != 0 ]] ; then
+        echo ""
+        echo "Installing node..."
+        brew install node
+        brew update
+        echo ""
+    else
+        echo "Node installed"
+    fi
+
     which -s python
     if [[ $? != 0 ]] ; then
         echo ""
@@ -97,7 +108,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     echo "- Enable F Keys in Keyboard Settings"
     echo "- Disable Show Desktop F11 shortcut in Settings > Keyboard > Shortcuts > Mission Control"
 
-else
+else # Linux section (codespaces and VS remote dev container)
     if [ -d "/workspaces/.codespaces/.persistedshare/dotfiles" ] ; then # in Codespaces
         export DOTFILES="/workspaces/.codespaces/.persistedshare/dotfiles"
     else # in a VSCode dev container

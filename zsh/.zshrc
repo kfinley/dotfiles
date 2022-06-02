@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 # DISABLE_AUTO_UPDATE=true
 # DISABLE_UPDATE_PROMPT=true
 
-echo "Installing dotfiles..."
+echo "Configuring dotfiles..."
 for DOTFILE in `find $DOTFILES/system`
 do
   [ -f $DOTFILE ] && source $DOTFILE

@@ -17,7 +17,6 @@ function gcommit() {
 function gac() {
     git add .
     git commit -m "$@"
-    git push
 }
 
 function gacp() {
