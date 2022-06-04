@@ -58,7 +58,7 @@
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
-  "cSpell.userWords": ["Newtonsoft"],
+  "cSpell.userWords": ["holeshot", "Newtonsoft", "Swipable"],
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
