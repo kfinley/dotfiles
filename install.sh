@@ -13,7 +13,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then   # MacOS section
     fi
 
     echo ""
-    echo "Installing packages..."
+    echo "Installing software packages..."
 
     if [ ! -d /Applications/iTerm.app ]; then
         # proceed with installing iTerm
@@ -49,6 +49,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then   # MacOS section
         echo ""
         echo "Installing Firefox..."
         brew install --cask firefox
+    fi
+
+    if [ ! -d /Applications/Chromium.app ]; then
+        echo ""
+        echo "Installing Chromium..."
+        brew install --cask chromium
+        brew upgrade --cask chromium
+        xattr -dr com.apple.quarantine /Applications/Chromium.app/
     fi
 
     which -s node
