@@ -88,6 +88,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then   # MacOS section
         brew update
     fi
 
+    which -s jq
+    if [[ $? != 0 ]] ; then
+        echo ""
+        echo "Installing jq..."
+        brew install jq
+    fi
+
     if [ ! -d ~/.oh-my-zsh ]; then
         echo ""
         echo "Installing oh-my-zsh..."
