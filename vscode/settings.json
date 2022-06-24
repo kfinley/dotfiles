@@ -63,7 +63,9 @@
     "interactjs",
     "Newtonsoft",
     "Swipable",
-    "Swipeable"
+    "Swipeable",
+    "typeahead",
+    "vuex"
   ],
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
