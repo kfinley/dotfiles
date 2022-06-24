@@ -95,6 +95,20 @@ if [[ "$OSTYPE" == "darwin"* ]]; then   # MacOS section
         brew install jq
     fi
 
+    which -s dsq
+    if [[ $? != 0 ]] ; then
+        echo ""
+        echo "Installing dsq.."
+        brew install dsq
+    fi
+
+    which -s yarn
+    if [[ $? != 0 ]] ; then        
+        echo ""
+        echo "Installing Yarn"
+        brew install yarn
+    fi
+
     if [ ! -d ~/.oh-my-zsh ]; then
         echo ""
         echo "Installing oh-my-zsh..."
