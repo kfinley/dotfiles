@@ -40,6 +40,7 @@ function s() {
     ibm
     ms
     twtr
+    t
 }
 
 function a() {
@@ -54,18 +55,19 @@ function ms() {
 
 function ibm() {
     IBM=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=ibm | grep -Eoi "<span stream=\"last_151846\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"75-" | colrm 7)
-    echo "IBM \$$IBM"
+    echo "IBM  \$$IBM"
 }
 
 function twtr() {
     TWTR=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=twtr | grep -Eoi "<span stream=\"last_68572657\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"77-" | colrm 6)
-    echo "TWTR \$$TWTR"
+    echo "TWTR  \$$TWTR"
 }
 
 function t() {
     T=$(curl -s https://money.cnn.com/quote/quote.html\?symb=\t | grep -Eoi "<span stream=\"last_248333\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"75-" | colrm 6)
-    echo "AT&T \$$T"
+    echo "AT&T  \$$T"
 }
+
 
 # remove specified host from /etc/hosts
 function removehost() {
