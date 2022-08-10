@@ -118,3 +118,14 @@ function addhost() {
         echo "  addhost ip domain"
     fi
 }
+
+#npm run
+function nr() {
+    npm run $@
+}
+
+
+#AWS CDK
+function cdk-init() {
+    npx aws-cdk init app --language=$@
+}
