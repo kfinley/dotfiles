@@ -45,7 +45,7 @@ function s() {
 
 function a() {
     AAPL=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=aapl | grep -Eoi "<span stream=\"last_36276\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"74-" | colrm 7)
-    echo "AAPL \$$AAPL"
+    printf "AAPL \$$AAPL --> \$%'.0f\n" $(($AAPL*2800))
 }
 
 function ms() {
