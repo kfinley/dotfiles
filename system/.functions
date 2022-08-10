@@ -62,6 +62,11 @@ function twtr() {
     echo "TWTR  \$$TWTR"
 }
 
+function t() {
+    T=$(curl -s https://money.cnn.com/quote/quote.html\?symb=\t | grep -Eoi "<span stream=\"last_248333\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"75-" | colrm 6)
+    echo "T \$$T"
+}
+
 # remove specified host from /etc/hosts
 function removehost() {
     if [[ "$1" ]]
