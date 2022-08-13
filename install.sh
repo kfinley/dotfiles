@@ -59,6 +59,17 @@ if [[ "$OSTYPE" == "darwin"* ]]; then   # MacOS section
         xattr -dr com.apple.quarantine /Applications/Chromium.app/
     fi
 
+    which -s aws
+    if [[ $? != 0 ]] ; then
+        echo ""
+        echo "Installing AWS-CLI"
+        brew install awscli
+        brew update
+        echo ""
+    else
+        echo "AWS-CLI installed"
+    fi
+
     which -s node
     if [[ $? != 0 ]] ; then
         echo ""
@@ -114,7 +125,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then   # MacOS section
         echo "Installing oh-my-zsh..."
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
-
+    
     # vscode settings
     if [ -f $HOME/Library/Application\ Support/Code/User/settings.json ]; then
         mv $HOME/Library/Application\ Support/Code/User/settings.json $HOME/Library/Application\ Support/Code/User/settings_backup.json
