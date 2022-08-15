@@ -48,6 +48,7 @@
   "remote.SSH.configFile": "~/.ssh/config",
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "files.insertFinalNewline": true,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
