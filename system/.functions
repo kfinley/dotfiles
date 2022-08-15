@@ -129,3 +129,9 @@ function nr() {
 function cdk-init() {
     npx aws-cdk init app --language=$@
 }
+
+
+#AWS Route53
+function nsc() {
+    aws route53domains check-domain-availability --domain-name $@ --region us-east-1
+}
