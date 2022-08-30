@@ -19,7 +19,7 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[vue]": {
-    "editor.defaultFormatter": "octref.vetur"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -60,6 +60,7 @@
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
   "cSpell.userWords": [
+    "dotfiles",
     "holeshot",
     "interactjs",
     "Newtonsoft",
@@ -70,5 +71,8 @@
   ],
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "aws.telemetry": false,
+  "dotfiles.repository": "https://github.com/kfinley/dotfiles.git"
 }
