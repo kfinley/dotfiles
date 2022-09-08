@@ -155,7 +155,9 @@ function gmtags() {
 
     META='{
   "title": "'$PAGE_TITLE'",
-  "metaTags": "'$PAGE_META_TAGS'"
+  "metaTags": [
+    "'$PAGE_META_TAGS'"
+  ]
 }'
     
     echo $META
