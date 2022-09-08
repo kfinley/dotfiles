@@ -60,19 +60,36 @@
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
   "cSpell.userWords": [
+    "apigatewaymanagementapi",
+    "bootstrapper",
+    "certificatemanager",
     "dotfiles",
+    "Groundboard",
+    "Groundboarding",
     "holeshot",
     "interactjs",
+    "inversify",
+    "kfinley",
+    "kiteboard",
+    "Kiteboarding",
+    "Kitesurfing",
+    "kylefinley",
     "Newtonsoft",
+    "richkites",
+    "stickey",
     "Swipable",
     "Swipeable",
     "typeahead",
-    "vuex"
+    "typemerger",
+    "vuex",
+    "websockets"
   ],
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.editor.splitInGroupLayout": "vertical",
   "aws.telemetry": false,
-  "dotfiles.repository": "https://github.com/kfinley/dotfiles.git"
+  "dotfiles.repository": "https://github.com/kfinley/dotfiles.git",
+  "extensions.autoUpdate": false,
+  "npm.keybindingsChangedWarningShown": true
 }
