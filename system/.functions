@@ -145,3 +145,18 @@ function gettitle() {
     wget -qO- $1 | 
     perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)\s*<\/title/si'
 }
+
+function gmtags() {
+
+    PAGE_TITLE=`wget -qO- $1 |
+    perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)\s*<\/title/si'`
+
+    PAGE_META_TAGS=`wget -qO- $1 | grep -Eoi '<meta [^>]+>' `
+
+    META='{
+  "title": "'$PAGE_TITLE'",
+  "metaTags": "'$PAGE_META_TAGS'"
+}'
+    
+    echo $META
+}
