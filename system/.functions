@@ -135,3 +135,13 @@ function cdk-init() {
 function nsc() {
     aws route53domains check-domain-availability --domain-name $@ --region us-east-1
 }
+
+# wget
+function gettags() {
+    wget -qO- $1 | grep -Eoi '<'$2' [^>]+>' 
+}
+
+function gettitle() {
+    wget -qO- $1 | 
+    perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)\s*<\/title/si'
+}
