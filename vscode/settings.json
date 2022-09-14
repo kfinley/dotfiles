@@ -22,7 +22,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "HookyQR.beautify"
   },
   "javascript.updateImportsOnFileMove.enabled": "never",
   "typescript.updateImportsOnFileMove.enabled": "never",
@@ -69,6 +69,7 @@
     "holeshot",
     "interactjs",
     "inversify",
+    "itemprop",
     "kfinley",
     "kiteboard",
     "Kiteboarding",
@@ -91,5 +92,6 @@
   "aws.telemetry": false,
   "dotfiles.repository": "https://github.com/kfinley/dotfiles.git",
   "extensions.autoUpdate": false,
-  "npm.keybindingsChangedWarningShown": true
+  "npm.keybindingsChangedWarningShown": true,
+  "aws.profile": "profile:default"
 }
