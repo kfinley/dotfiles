@@ -39,13 +39,12 @@ function s() {
     a
     ibm
     ms
-    twtr
     t
 }
 
 function a() {
     AAPL=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=aapl | grep -Eoi "<span stream=\"last_36276\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"74-" | colrm 7)
-    printf "AAPL \$$AAPL --> \$%'.0f\n" $(($AAPL*2800))
+    printf "AAPL \$$AAPL    \$%'.0f\n" $(($AAPL*3100))
 }
 
 function ms() {
@@ -58,16 +57,51 @@ function ibm() {
     echo "IBM  \$$IBM"
 }
 
-function twtr() {
-    TWTR=$(curl -s https://money.cnn.com/quote/quote.html\?symb\=twtr | grep -Eoi "<span stream=\"last_68572657\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"77-" | colrm 6)
-    echo "TWTR  \$$TWTR"
-}
-
 function t() {
     T=$(curl -s https://money.cnn.com/quote/quote.html\?symb=\t | grep -Eoi "<span stream=\"last_248333\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"75-" | colrm 6)
     echo "AT&T  \$$T"
 }
 
+function mmt() {
+    MMT=$(curl -s https://money.cnn.com/quote/quote.html\?symb=\MMT | grep -Eoi "<span stream=\"last_202885\" streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">(.+)</span>" | cut -c"75-" | colrm 5)
+    echo "MMT \$$MMT"
+ }
+
+function cwgix() {
+    price=$(curl -s https://finance.yahoo.com/quote/CWGIX | grep -Eoi "data-symbol=\"CWGIX\" data-test=\"qsp-price\" data-field=\"regularMarketPrice\" data-trend=\"none\" data-pricehint=\"2\" value=\"(.+)\"" | cut -c"119-" | colrm 6)
+    echo "CWGIX \$$price"
+}
+
+function amrmx() {
+    price=$(curl -s https://finance.yahoo.com/quote/AMRMX | grep -Eoi "data-symbol=\"AMRMX\" data-test=\"qsp-price\" data-field=\"regularMarketPrice\" data-trend=\"none\" data-pricehint=\"2\" value=\"(.+)\"" | cut -c"119-" | colrm 6)
+    echo "AMRMX \$$price"
+}
+
+function fagax() {
+    price=$(curl -s https://finance.yahoo.com/quote/FAGAX | grep -Eoi "data-symbol=\"FAGAX\" data-test=\"qsp-price\" data-field=\"regularMarketPrice\" data-trend=\"none\" data-pricehint=\"2\" value=\"(.+)\"" | cut -c"119-" | colrm 6)
+    echo "FAGAX \$$price"
+}
+
+function fagax() {
+    stock 'FAGAX'
+}
+
+function stock() {
+
+    offset=119
+    
+    if [[ "$2" ]]
+    then
+        offset=$2
+    fi
+    
+    price=$(curl -s https://finance.yahoo.com/quote/$1 | grep -Eoi "data-symbol=\"$1\" data-test=\"qsp-price\" data-field=\"regularMarketPrice\" data-trend=\"none\" data-pricehint=\"2\" value=\"(.+)\"" | cut -c"$offset-" | colrm 6)
+    echo "$1 \$$price"
+}
+
+function ddt() {
+    stock 'DDT' 114
+}
 
 # remove specified host from /etc/hosts
 function removehost() {
