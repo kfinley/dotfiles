@@ -22,7 +22,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "HookyQR.beautify"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "javascript.updateImportsOnFileMove.enabled": "never",
   "typescript.updateImportsOnFileMove.enabled": "never",
@@ -77,6 +77,8 @@
     "kylefinley",
     "Newtonsoft",
     "richkites",
+    "sockette",
+    "stepfunctions",
     "stickey",
     "Swipable",
     "Swipeable",
@@ -93,5 +95,8 @@
   "dotfiles.repository": "https://github.com/kfinley/dotfiles.git",
   "extensions.autoUpdate": false,
   "npm.keybindingsChangedWarningShown": true,
-  "aws.profile": "profile:default"
+  "aws.profile": "profile:default",
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

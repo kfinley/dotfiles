@@ -49,7 +49,7 @@ ms-vscode.vs-keybindings
 ms-vscode.vscode-typescript-tslint-plugin
 msjsdiag.debugger-for-chrome
 mtxr.sqltools
-octref.veturs
+octref.vetur
 Okteto.remote-kubernetes
 Orta.vscode-jest
 RadwanFaci.stack-trace-formatter
@@ -59,3 +59,4 @@ ThreadHeap.serverless-ide-vscode
 tomoki1207.pdf
 streetsidesoftware.code-spell-checker
 kosunix.guid
+cschleiden.vscode-github-actions
