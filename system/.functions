@@ -1,3 +1,7 @@
+function count-files() {
+    find . -type f | wc -l
+}
+
 function ur() {
     git commit -m '(chore): updated refs'
 }
@@ -158,16 +162,22 @@ function nr() {
     npm run $@
 }
 
-
 #AWS CDK
 function cdk-init() {
     npx aws-cdk init app --language=$@
 }
 
-
 #AWS Route53
 function nsc() {
     aws route53domains check-domain-availability --domain-name $@ --region us-east-1
+}
+
+function route53-register-skeleton() {
+    aws route53domains register-domain --generate-cli-skeleton >> registration.json
+}
+
+function route53-register-domain() {
+    aws route53domains register-domain --cli-input-json file://$@
 }
 
 # wget
@@ -195,4 +205,193 @@ function gmtags() {
 }'
     
     echo $META
+}
+
+function getPDFs() {
+    wget --no-directories --content-disposition --restrict-file-names=nocontrol -e robots=off -A.pdf -r $1
+}
+
+function remove-string-from-files() {
+    for f in ./*; do 
+        if [[ "$f" == *"$1"* ]]; then
+            mv -i "$f" "${f/$1/}" ; 
+        fi
+    done
+}
+
+# Fakebook related functions
+function find-chart() {
+    # brew install pdfgrep
+    echo 'Searching for chart using pdfgrep...'
+    pdfgrep -Rin $1 ~/Documents/Fakebooks   
+}
+
+function open-chart() {
+    # brew install qpdf
+
+    if [ $3 = 'toc' ] ; then
+        start=$4
+        
+        if [ -z "$5" ] ; then
+            end=$4;
+        else
+            end=$5;
+        fi
+
+        case $1 in
+            *"real-book-ii-jazz-piano"*)
+                start=`expr $start + 7`
+                end=`expr $end + 7`
+            ;;
+            *"realbookbassvol2_text"*)
+                if [ $start -lt 330 ] ; then
+                    start=`expr $start - 2`
+                    end=`expr $end - 2`
+                elif [ $start -lt 332 ] ; then
+                    echo 'Chart Missing from PDF!!'
+                    return
+                elif [ $start -lt 334 ] ; then
+                    start=`expr $start - 4`
+                    end=`expr $end - 4`
+                elif [ $start -lt 344 ] ; then
+                    echo 'Chart Missing from PDF!!'
+                    return
+                 else 
+                    start=`expr $start - 14`
+                    end=`expr $end - 14`
+                 fi
+            ;;
+            *"therealbook-fifthedition-f-bassclef_text"*)
+                start=`expr $start + 10`
+                end=`expr $end + 10`
+            ;;
+
+            *"557 Jazz Standards"*)
+                start=`expr $start + 13`
+                end=`expr $end + 13`
+            ;;
+
+            *"the-real-book-bass-vol-3"*)
+                if [ $start -lt 48 ] ; then
+                    start=`expr $start + 2`
+                    end=`expr $end + 2`
+                elif [ $start -lt 53 ] ; then
+                    start=`expr $start + 1`
+                    end=`expr $end + 1`
+                elif [ $start -lt 58 ] ; then
+                    start=`expr $start - 0`
+                    end=`expr $end - 0`
+                elif [ $start -lt 62 ] ; then
+                    start=`expr $start - 1`
+                    end=`expr $end - 1`
+                elif [ $start -lt 65 ] ; then
+                    start=`expr $start - 2`
+                    end=`expr $end - 2`
+                elif [ $start -lt 69 ] ; then
+                    start=`expr $start - 3`
+                    end=`expr $end - 3`
+                elif [ $start -lt 77 ] ; then
+                    start=`expr $start - 4`
+                    end=`expr $end - 4`
+                elif [ $start -lt 105 ] ; then
+                    start=`expr $start - 5`
+                    end=`expr $end - 5`
+                elif [ $start -lt 139 ] ; then
+                    start=`expr $start - 6`
+                    end=`expr $end - 6`
+                elif [ $start -lt 147 ] ; then
+                    start=`expr $start - 7`
+                    end=`expr $end - 7`
+                elif [ $start -lt 153 ] ; then
+                    start=`expr $start - 8`
+                    end=`expr $end - 8`
+                elif [ $start -lt 165 ] ; then
+                    start=`expr $start - 9`
+                    end=`expr $end - 9`
+                elif [ $start -lt 177 ] ; then
+                    echo 'yep'
+                    start=`expr $start - 11`
+                    end=`expr $end - 11`
+                else
+                    start=`expr $start - 11`
+                    end=`expr $end - 11`
+                fi
+            ;;
+
+            *"The_New_Bob_Book"*)
+                start=`expr $start + 7`
+                end=`expr $end + 7`
+            ;;
+
+           
+        esac
+    else 
+        start=$3
+        if [ -z "$4" ] ; then
+            end=$3;
+        else
+            end=$4;
+        fi
+
+        case $1 in
+            *"real-jazz-chord-book"*)
+
+            ;;
+        esac
+    fi
+
+
+    qpdf --empty --pages ~/Documents/Fakebooks/$1 $start-$end -- ~/Documents/Fakebooks/out/$2.pdf
+    open ~/Documents/Fakebooks/out/$2.pdf
+    rm ~/Documents/Fakebooks/out/$2.pdf
+}
+
+function open-toc() {
+    case $1 in
+        *"real-book-ii-jazz-piano"*)
+            start=`expr $start + 7`
+            end=`expr $end + 7`
+        ;;
+        *"realbookbassvol2_text"*)
+            if [ $start -gt 209 ] ; then
+                start=`expr $start + 4`
+                end=`expr $end + 4`
+            else 
+                start=`expr $start + 6`
+                end=`expr $end + 6`
+            fi
+        ;;
+        *"therealbook-fifthedition-f-bassclef_text"*)
+            start=4
+            end=9
+        ;;
+        *"557 Jazz Standards"*)
+            open ~/Documents/Fakebooks/557\ Jazz\ Standards\ TOC.PDF
+            return
+        ;;
+    esac 
+
+    qpdf --empty --pages ~/Documents/Fakebooks/$1 $start-$end -- ~/Documents/Fakebooks/out/$1-toc.pdf
+    open ~/Documents/Fakebooks/out/$1-toc.pdf
+    rm ~/Documents/Fakebooks/out/$1-toc.pdf
+}
+
+function open-book() {
+    open ~/Documents/Fakebooks/$1
+}
+
+function explain() {
+     case $1 in
+        *"Fakebook-Search-Demo"*)
+            echo "On the left we're searching almost 500 PDF files that are either full fakebooks or 
+single charts. We can then open a single chart from a book using the result using the open-chart function.
+            
+The open-chart function can open charts using either the page number listed in the TOC or the page number 
+within the PDF. The number in green is the page number within the file and the TOC content is usually 
+obvious. Some books have had their TOC extracted and then run through OCR in order to try to get some 
+visibility into those books. More can be done here to improve the data we can search. The better quality 
+the PDF and if it includes text will provide the best results.
+            "
+        ;;
+    esac
 }
