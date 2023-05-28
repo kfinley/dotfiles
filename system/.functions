@@ -222,7 +222,7 @@ function remove-string-from-files() {
 # Fakebook related functions
 function find-chart() {
     # brew install pdfgrep
-    echo 'Searching for chart using pdfgrep...'
+    echo 'Searching for' $1 '(using pdfgrep)...'
     pdfgrep -Rin $1 ~/Documents/Fakebooks   
 }
 
@@ -243,6 +243,7 @@ function open-chart() {
                 start=`expr $start + 7`
                 end=`expr $end + 7`
             ;;
+            
             *"realbookbassvol2_text"*)
                 if [ $start -lt 330 ] ; then
                     start=`expr $start - 2`
@@ -261,6 +262,7 @@ function open-chart() {
                     end=`expr $end - 14`
                  fi
             ;;
+
             *"therealbook-fifthedition-f-bassclef_text"*)
                 start=`expr $start + 10`
                 end=`expr $end + 10`
@@ -322,8 +324,6 @@ function open-chart() {
                 start=`expr $start + 7`
                 end=`expr $end + 7`
             ;;
-
-           
         esac
     else 
         start=$3
@@ -332,18 +332,12 @@ function open-chart() {
         else
             end=$4;
         fi
-
-        case $1 in
-            *"real-jazz-chord-book"*)
-
-            ;;
-        esac
     fi
 
 
     qpdf --empty --pages ~/Documents/Fakebooks/$1 $start-$end -- ~/Documents/Fakebooks/out/$2.pdf
     open ~/Documents/Fakebooks/out/$2.pdf
-    rm ~/Documents/Fakebooks/out/$2.pdf
+    # rm ~/Documents/Fakebooks/out/$2.pdf
 }
 
 function open-toc() {
@@ -389,9 +383,32 @@ single charts. We can then open a single chart from a book using the result usin
 The open-chart function can open charts using either the page number listed in the TOC or the page number 
 within the PDF. The number in green is the page number within the file and the TOC content is usually 
 obvious. Some books have had their TOC extracted and then run through OCR in order to try to get some 
-visibility into those books. More can be done here to improve the data we can search. The better quality 
-the PDF and if it includes text will provide the best results.
+searchability into those books. More can be done here to improve the charts that can search. The better 
+quality the PDF (including meta & text is key) provide the best results.
             "
         ;;
     esac
+}
+
+// Convert audio recordings from m4a to mp3
+function car() {
+  input_dir=$1
+  output_dir="${input_dir}/mp3"
+
+  # Create the output directory if it doesn't exist
+  mkdir -p "$output_dir"
+
+  # Loop through each m4a file in the input directory and convert it to mp3 if it hasn't been converted already
+  for file in "$input_dir"/*.m4a
+  do
+    output_file="$output_dir/${file##*/}"
+    output_file="${output_file%.m4a}.mp3"
+
+    # Check if the output file already exists
+    if [ ! -f "$output_file" ]; then
+      ffmpeg -i "$file" -codec:a libmp3lame -qscale:a 2 "$output_file"
+    else
+      echo "Skipping $file, $output_file already exists"
+    fi
+  done
 }

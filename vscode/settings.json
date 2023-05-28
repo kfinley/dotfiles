@@ -12,7 +12,7 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "[typescript]": {
@@ -61,6 +61,7 @@
   },
   "cSpell.userWords": [
     "apigatewaymanagementapi",
+    "backoff",
     "bootstrapper",
     "certificatemanager",
     "dotfiles",
@@ -75,15 +76,21 @@
     "Kiteboarding",
     "Kitesurfing",
     "kylefinley",
+    "linkify",
     "Newtonsoft",
+    "RACELOG",
+    "registrer",
     "richkites",
+    "Riverwalk",
     "sockette",
     "stepfunctions",
     "stickey",
+    "Supercross",
     "Swipable",
     "Swipeable",
     "typeahead",
     "typemerger",
+    "unmarshall",
     "vuex",
     "websockets"
   ],
@@ -96,7 +103,8 @@
   "extensions.autoUpdate": false,
   "npm.keybindingsChangedWarningShown": true,
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "off"
   },
   "redhat.telemetry.enabled": false,
   "yaml.customTags": [
@@ -127,5 +135,9 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ]
+  ],
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "window.zoomLevel": -1
 }

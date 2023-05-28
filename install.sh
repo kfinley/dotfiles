@@ -120,6 +120,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then   # MacOS section
         brew install yarn
     fi
 
+    which -s ffmpeg
+    if [[ $? != 0 ]] ; then        
+        echo ""
+        echo "Installing FFmpeg"
+        brew install ffmpeg
+    fi
+
     if [ ! -d ~/.oh-my-zsh ]; then
         echo ""
         echo "Installing oh-my-zsh..."
