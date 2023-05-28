@@ -390,7 +390,7 @@ quality the PDF (including meta & text is key) provide the best results.
     esac
 }
 
-// Convert audio recordings from m4a to mp3
+# Convert audio recordings from m4a to mp3
 function car() {
   input_dir=$1
   output_dir="${input_dir}/mp3"
