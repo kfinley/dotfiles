@@ -64,6 +64,8 @@
     "backoff",
     "bootstrapper",
     "certificatemanager",
+    "codespaces",
+    "combinators",
     "dotfiles",
     "Groundboard",
     "Groundboarding",
@@ -140,4 +142,6 @@
     "editor.formatOnType": true
   },
   "window.zoomLevel": -1
+  "aws.profile": "profile:default",
+  "workbench.colorTheme": "Default Dark+",
 }
